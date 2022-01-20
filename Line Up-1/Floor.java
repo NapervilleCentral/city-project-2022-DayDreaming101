@@ -14,7 +14,7 @@ public class Floor extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h;
-
+    Color sqColor = new Color(168,220,217);
     /**
      * Constructor for objects of class Floor
      */
@@ -64,10 +64,39 @@ public class Floor extends JComponent implements Runnable
        //-----------------------------------------------------------------
        //  Draws this figure relative to baseX, baseY, and height.
        //-----------------------------------------------------------------
-       public void draw (Graphics2D page)
+       public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
           page.setColor(Color.black);
           page.fillRect(x, y, w, h);
+          
+          
+          
+          page.setColor(sqColor);
+          page.drawRect(x+10,y+2,10,10);
+          
+          page.setColor(sqColor);
+          page.fillRect(x+10, y+18, 10, 10);
+         
+          page.setColor(sqColor);
+          page.fillRect(x+10, y+34, 10, 10);
+         
+          page.setColor(sqColor);
+          page.fillRect(x+26, y+2, 10, 10);
+         
+          page.setColor(sqColor);
+          page.fillRect(x+26, y+18, 10, 10);
+          
+          page.setColor(sqColor);
+          page.fillRect(x+42, y+34, 10, 10);
+          
+          page.setColor(sqColor);
+          page.fillRect(x+42, y+2, 10, 10);
+         
+          page.setColor(sqColor);
+          page.fillRect(x+42, y+18, 10, 10);
+          
+          page.setColor(sqColor);
+          page.fillRect(x+42, y+34, 10, 10);
        }
        
     public void run()
@@ -81,7 +110,7 @@ public class Floor extends JComponent implements Runnable
             x -= 20;
         running ++;
             try{
-            Thread.sleep(17);
+            Thread.sleep(100);
         }catch (Exception e){}
         
         System.out.print(x+"-----------------");

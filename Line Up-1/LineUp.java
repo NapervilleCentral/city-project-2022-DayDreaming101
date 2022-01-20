@@ -102,7 +102,7 @@ public class LineUp extends JComponent //implements Runnable
 
    public void nextFrame()
    {
-       //figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure2.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure3.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
        //figure4.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));

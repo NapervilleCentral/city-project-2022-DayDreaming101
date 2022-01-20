@@ -46,10 +46,11 @@ public class CityscapeViewer
         frame.setVisible(true);
         
         // animate the cityscape
-        for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
+        while (true)
+        //for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             row.nextFrame();
-            Thread.sleep( 100 );
+            Thread.sleep( 10 );
         }
         
     }

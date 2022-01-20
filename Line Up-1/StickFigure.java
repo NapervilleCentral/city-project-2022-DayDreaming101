@@ -57,7 +57,6 @@ public class StickFigure extends JComponent implements Runnable
         // ...
         draw(g2);
 
-
     }
 
     /**
