@@ -13,11 +13,20 @@ public class Cityscape extends JComponent
 {
     // define the objects in your Cityscape as instance variables
     // ...
-    
+    BridgeFloor floor = new BridgeFloor();
+    private BridgeFloor ground;
+    private int running = 0;
     
     
     // define the Cityscape contructor and intiailize all instance variables
     // ...
+    public Cityscape()
+    {
+        ground = new BridgeFloor();
+        Thread t1 = new Thread(ground);
+        t1.start();
+
+    }
     
     
     /**
@@ -31,11 +40,10 @@ public class Cityscape extends JComponent
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
+        ground.draw(g2);
         
         // invoke the draw method on each object in your Cityscape
-        // ...
-        
-        
+        // ...  
     }
     
     /**
@@ -45,6 +53,10 @@ public class Cityscape extends JComponent
      */
     public void nextFrame()
     {
+       running ++;
+       ground.setX(running);
+       Thread t1 = new Thread(ground);
+       t1.start();
         // update the objects in the cityscape so they are animated
         // ...
         

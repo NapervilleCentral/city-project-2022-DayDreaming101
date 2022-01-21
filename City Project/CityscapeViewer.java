@@ -33,12 +33,8 @@ public class CityscapeViewer
         int h2 = 100 + (int)(Math.random()*45);
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
-        CityscapeComponent component = new CityscapeComponent();
-        
-        
-        
+        Cityscape component = new Cityscape();
         frame.add(component);
-        
         
         
         // make the frame visible which will result in the paintComponent method being invoked on the
@@ -48,7 +44,7 @@ public class CityscapeViewer
         // animate the cityscape
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
-            row.nextFrame();
+            component.nextFrame();
             Thread.sleep( 100 );
         }
         
