@@ -15,6 +15,7 @@ public class Cityscape extends JComponent
     // ...
     BridgeFloor floor = new BridgeFloor();
     private BridgeFloor ground;
+    private BridgeOverhead overhead1, overhead2, overhead3;
     private int running = 0;
     
     
@@ -24,7 +25,12 @@ public class Cityscape extends JComponent
     {
         ground = new BridgeFloor();
         Thread t1 = new Thread(ground);
-        t1.start();
+        
+        overhead1 = new BridgeOverhead(1);
+        overhead2 = new BridgeOverhead(2);
+        overhead3 = new BridgeOverhead(3);
+        
+        //t1.start();
 
     }
     
@@ -41,6 +47,8 @@ public class Cityscape extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         ground.draw(g2);
+        overhead1.draw(g2);
+        
         
         // invoke the draw method on each object in your Cityscape
         // ...  
@@ -56,7 +64,7 @@ public class Cityscape extends JComponent
        running ++;
        ground.setX(running);
        Thread t1 = new Thread(ground);
-       t1.start();
+      // t1.start();
         // update the objects in the cityscape so they are animated
         // ...
         

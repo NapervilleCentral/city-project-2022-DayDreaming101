@@ -10,21 +10,45 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BridgeFloor extends JComponent implements Runnable
+public class BridgeOverhead extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
-    private int x,y,w,h;
-    Color sqColor = new Color(128,128,128);
+    private int x,y,w,h,startAngle,arcAngle;
+    Color ArcColor = new Color(128,128,128);
     
     /**
      * Constructor for objects of class Floor
      */
-    public BridgeFloor()
+    public BridgeOverhead(int num)
     {
-        x = 0;
-        y = 180;
-        w = 400;
-        h = 12;
+        if (num == 1)
+        {
+            x = 0;
+            y = 80;
+            w = 133;
+            h = 100;
+            startAngle = 0;
+            arcAngle = 180;
+        }
+        else if (num == 1)
+        {
+            x = 0;
+            y = 80;
+            w = 133;
+            h = 100;
+            startAngle = 30;
+            arcAngle = 90;
+        }
+        else
+        {
+            x = 0;
+            y = 80;
+            w = 133;
+            h = 100;
+            startAngle = 30;
+            arcAngle = 90;
+        }
+
     }
 
     @Override
@@ -67,8 +91,8 @@ public class BridgeFloor extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
-          page.setColor(sqColor);
-          page.fillRect(x, y, w, h);
+          page.setColor(ArcColor);
+          page.fillArc(x, y,w,h,startAngle,arcAngle);
           /*
           page.setColor(sqColor);
           page.drawRect(x+10,y+2,10,10);
