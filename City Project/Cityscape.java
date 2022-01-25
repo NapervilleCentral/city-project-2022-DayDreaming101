@@ -16,6 +16,7 @@ public class Cityscape extends JComponent
     BridgeFloor floor = new BridgeFloor();
     private BridgeFloor ground;
     private BridgeOverhead overhead1, overhead2, overhead3;
+    private BridgeRailings rail1,rail2,rail3; 
     private int running = 0;
     
     
@@ -24,12 +25,18 @@ public class Cityscape extends JComponent
     public Cityscape()
     {
         ground = new BridgeFloor();
-        Thread t1 = new Thread(ground);
         
         overhead1 = new BridgeOverhead(1);
         overhead2 = new BridgeOverhead(2);
         overhead3 = new BridgeOverhead(3);
         
+        rail1 = new BridgeRailings(1);
+        
+        Thread t1 = new Thread(ground);
+        Thread t2 = new Thread(overhead1);
+        Thread t3 = new Thread(overhead2);
+        Thread t4 = new Thread(overhead3);
+        Thread t5 = new Thread(rail1);
         //t1.start();
 
     }
@@ -48,6 +55,9 @@ public class Cityscape extends JComponent
         Graphics2D g2 = (Graphics2D) g;
         ground.draw(g2);
         overhead1.draw(g2);
+        overhead2.draw(g2);
+        overhead3.draw(g2);
+        rail1.draw(g2); 
         
         
         // invoke the draw method on each object in your Cityscape

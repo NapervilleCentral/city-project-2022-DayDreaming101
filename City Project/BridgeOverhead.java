@@ -14,7 +14,6 @@ public class BridgeOverhead extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h,startAngle,arcAngle;
-    Color ArcColor = new Color(128,128,128);
     
     /**
      * Constructor for objects of class Floor
@@ -24,29 +23,29 @@ public class BridgeOverhead extends JComponent implements Runnable
         if (num == 1)
         {
             x = 0;
-            y = 80;
-            w = 133;
-            h = 100;
+            y = 165;
+            w = 200;
+            h = 270;
             startAngle = 0;
             arcAngle = 180;
         }
-        else if (num == 1)
+        else if (num == 2)
         {
-            x = 0;
-            y = 80;
-            w = 133;
-            h = 100;
-            startAngle = 30;
-            arcAngle = 90;
+            x = 383;
+            y = 165;
+            w = 200;
+            h = 270;
+            startAngle = 0;
+            arcAngle = 180;
         }
         else
         {
-            x = 0;
-            y = 80;
-            w = 133;
-            h = 100;
-            startAngle = 30;
-            arcAngle = 90;
+            x = 200;
+            y = 112;
+            w = 183;
+            h = 375;
+            startAngle = 0;
+            arcAngle = 180;
         }
 
     }
@@ -91,8 +90,9 @@ public class BridgeOverhead extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
-          page.setColor(ArcColor);
-          page.fillArc(x, y,w,h,startAngle,arcAngle);
+          page.setColor(Color.black);
+          page.drawArc(x, y,w,h,startAngle,arcAngle);
+          
           /*
           page.setColor(sqColor);
           page.drawRect(x+10,y+2,10,10);
@@ -105,7 +105,7 @@ public class BridgeOverhead extends JComponent implements Runnable
        }
        
     public void run()
-    {/*
+    {
         int running  = 0;
     while(true){
         
@@ -123,5 +123,5 @@ public class BridgeOverhead extends JComponent implements Runnable
     }
     
   
-    */}
+    }
 }
