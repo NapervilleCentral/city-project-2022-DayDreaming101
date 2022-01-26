@@ -10,68 +10,48 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BridgeRailings extends JComponent implements Runnable
+public class TopSky extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
-    private int x1,y1,x2,y2,a1,b1,a2,b2,c1,d1,c2,d2;
+    private int x,y,w,h,startAngle, arcAngle;
+    Color sqColor = new Color(173,216,230);
     
     /**
      * Constructor for objects of class Floor
      */
-    public BridgeRailings(int num)
+    public TopSky(int num)
     {
+        x = 0;
+        y = 0;
+        w = 600;
+        h = 300;
         if (num == 1)
         {
-            x1 = 50;
-            y1 = 185;
-            x2 = 50;
-            y2 = 300;
-            
-            a1 = 100;
-            b1 = 165;
-            a2 = 100;
-            b2 = 300;
-            
-            c1 = 150;
-            d1 = 185;
-            c2 = 150;
-            d2 = 300; 
+            x = 0;
+            y = 165;
+            w = 200;
+            h = 270;
+            startAngle = 0;
+            arcAngle = 180;
         }
         else if (num == 2)
         {
-            x1 = 245;
-            y1 = 138;
-            x2 = 245;
-            y2 = 300;
-            
-            a1 = 290;
-            b1 = 112;
-            a2 = 290;
-            b2 = 300;
-            
-            c1 = 335;
-            d1 = 138;
-            c2 = 335;
-            d2 = 300; 
+            x = 383;
+            y = 165;
+            w = 200;
+            h = 270;
+            startAngle = 0;
+            arcAngle = 180;
         }
         else
         {
-            x1 = 433;
-            y1 = 185;
-            x2 = 433;
-            y2 = 300;
-            
-            a1 = 483;
-            b1 = 165;
-            a2 = 483;
-            b2 = 300;
-            
-            c1 = 533;
-            d1 = 185;
-            c2 = 533;
-            d2 = 300; 
+            x = 200;
+            y = 112;
+            w = 183;
+            h = 375;
+            startAngle = 0;
+            arcAngle = 180;
         }
-
     }
 
     @Override
@@ -114,11 +94,11 @@ public class BridgeRailings extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
-          page.setColor(Color.black);
-          page.drawLine(x1,y1,x2,y2);
-          page.drawLine(a1,b1,a2,b2);
-          page.drawLine(c1,d1,c2,d2);
+          page.setColor(sqColor);
+          page.fillRect(x,y,w,h); 
           
+          page.setColor(Color.white);
+          page.fillArc(x,y,w,h,startAngle,arcAngle);
           /*
           page.setColor(sqColor);
           page.drawRect(x+10,y+2,10,10);
