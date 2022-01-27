@@ -10,21 +10,49 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TopSky extends JComponent implements Runnable
+public class Building extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
-    private int x0,y0,w0,h0;
-    Color sqColor = new Color(153,217,234);
+    private int x,y,w,h;
+    Color sqColor = new Color(127,127,127);
     
     /**
      * Constructor for objects of class Floor
      */
-    public TopSky()
+    public Building(int num)
     {
-        x0 = 0;
-        y0 = 0;
-        w0 = 600;
-        h0 = 300;
+        if (num == 1)
+        {
+            x = 30;
+            y = 70;
+            w = 57;
+            h = 150; 
+        }
+        else if (num == 2)
+        {
+            x = 105;
+            y = 40;
+            w = 65;
+            h = 200;/*
+            a1 = 100;
+            b1 = 165;
+            a2 = 100;
+            b2 = 300;*/
+        }
+        else if (num == 3)
+        {
+           x = 190;
+           y = 100;
+           w = 20;
+           h = 100;
+            
+           /*
+            * c1 = 150;
+            d1 = 185;
+            c2 = 150;
+            d2 = 300; 
+            */
+        }
     }
 
     @Override
@@ -68,7 +96,7 @@ public class TopSky extends JComponent implements Runnable
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
           page.setColor(sqColor);
-          page.fillRect(x0,y0,w0,h0);
+          page.fillRect(x,y,w,h);
       
           /*
           page.setColor(sqColor);

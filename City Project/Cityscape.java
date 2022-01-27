@@ -17,7 +17,9 @@ public class Cityscape extends JComponent
     private BridgeFloor ground;
     private BridgeOverhead overhead1, overhead2, overhead3;
     private BridgeRailings rail1,rail2,rail3; 
-    private TopSky topsky1, topsky2,topsky3;
+    private TopSky topsky;
+    private BridgeColor bridgecolor1, bridgecolor2,bridgecolor3; 
+    private Building building1,building2,building3,building4,building5,building6,building7;
     private int running = 0;
     
     
@@ -25,9 +27,15 @@ public class Cityscape extends JComponent
     // ...
     public Cityscape()
     {
-        topsky1 = new TopSky(1);
-        topsky2 = new TopSky(2);
-        topsky3 = new TopSky(3);
+        topsky = new TopSky();
+        
+        building1 = new Building(1); 
+        building2 = new Building(2);
+        building3 = new Building(3);
+        
+        bridgecolor1 = new BridgeColor(1);
+        bridgecolor2 = new BridgeColor(2);
+        bridgecolor3 = new BridgeColor(3);
         
         ground = new BridgeFloor();
         
@@ -61,9 +69,15 @@ public class Cityscape extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        topsky1.draw(g2);
-        topsky2.draw(g2); 
-        topsky3.draw(g2);
+        topsky.draw(g2);
+        
+        building1.draw(g2); 
+        building2.draw(g2);
+        building3.draw(g2); 
+        
+        bridgecolor1.draw(g2); 
+        bridgecolor2.draw(g2); 
+        bridgecolor3.draw(g2); 
         
         ground.draw(g2);
         
