@@ -32,6 +32,10 @@ public class Cityscape extends JComponent
         building1 = new Building(1); 
         building2 = new Building(2);
         building3 = new Building(3);
+        building4 = new Building(4); 
+        building5 = new Building(5); 
+        building6 = new Building(6); 
+        
         
         bridgecolor1 = new BridgeColor(1);
         bridgecolor2 = new BridgeColor(2);
@@ -74,6 +78,9 @@ public class Cityscape extends JComponent
         building1.draw(g2); 
         building2.draw(g2);
         building3.draw(g2); 
+        building4.draw(g2); 
+        building5.draw(g2); 
+        building6.draw(g2); 
         
         bridgecolor1.draw(g2); 
         bridgecolor2.draw(g2); 

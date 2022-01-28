@@ -10,87 +10,21 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Building extends JComponent implements Runnable
+public class River extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h;
-    Color sqColor = new Color(190,190,190);
+    Color sqColor = new Color(0,0,1390);
     
     /**
      * Constructor for objects of class Floor
      */
-    public Building(int num)
+    public River(int num)
     {
-        if (num == 1)
-        {
-            x = 30;
-            y = 70;
-            w = 57;
-            h = 150; 
-        }
-        else if (num == 2)
-        {
-            x = 105;
-            y = 40;
-            w = 65;
-            h = 200;/*
-            a1 = 100;
-            b1 = 165;
-            a2 = 100;
-            b2 = 300;*/
-        }
-        else if (num == 3)
-        {
-           x = 190;
-           y = 140;
-           w = 35;
-           h = 170;
-            
-           /*
-            * c1 = 150;
-            d1 = 185;
-            c2 = 150;
-            d2 = 300; 
-            */
-        }
-        else if (num == 4)
-        {
-            x = 240;
-            y = 30;
-            w = 65;
-            h = 200;
-            
-            /* x1 = 433;
-            y1 = 185;
-            x2 = 433;
-            y2 = 300;*/
-        }
-        else if (num == 5)
-        {
-            x = 320;
-            y = 90;
-            w = 55;
-            h = 200; 
-            
-        /*
-         * a1 = 290;
-            b1 = 112;
-            a2 = 290;
-            b2 = 300;
-         */
-        }
-        else if (num == 6)
-        {
-            x = 420;
-            y = 60;
-            w = 55;
-            h = 150;
-            
-            /*x1 = 433;
-            y1 = 185;
-            x2 = 433;
-            y2 = 300;*/
-        }
+        x = 0;
+        y = 300;
+        w = 600;
+        h = 12;
     }
 
     @Override
