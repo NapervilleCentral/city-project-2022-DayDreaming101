@@ -45,7 +45,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep(200 );
+            Thread.sleep(100 );
         }
         
     }

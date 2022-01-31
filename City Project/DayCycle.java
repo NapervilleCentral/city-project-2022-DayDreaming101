@@ -69,21 +69,27 @@ public class DayCycle extends JComponent implements Runnable
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
           page.setColor(Color.yellow);
-          //page.fillArc(x,y,w,h,startAngle,arcAngle);
-          
-          
-          
-          for (;y < 10;y -= 1, x+= 1)
-          {
-            page.fillArc(x,y,w,h,startAngle,arcAngle);
-            }
+          page.fillArc(x,y,w,h,startAngle,arcAngle);
+            
        }
        
     public void run()
     {
-        while(true){           
+        while(true){         
+            if (x==500){
+                x = 10;
+                y = 50;
+            }
+            x+=5;
+            if (x >= 50)
+            {
+                y += 10;
+            }
+            y -= 5;
+            System.out.println("poo"); 
+            
             try{
-                Thread.sleep(100);
+                Thread.sleep(50);
             }catch (Exception e){}
             repaint();
         }
