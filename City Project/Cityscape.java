@@ -64,6 +64,7 @@ public class Cityscape extends JComponent
         Thread t5 = new Thread(building5);
         Thread t6 = new Thread(building6);
         Thread t7 = new Thread(cycle);
+        
         t7.start();
         t1.start();
         t2.start(); 
@@ -71,8 +72,6 @@ public class Cityscape extends JComponent
         t4.start();
         t5.start();
         t6.start();
-         
-        
     }
     
     
