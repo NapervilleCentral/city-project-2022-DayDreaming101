@@ -21,7 +21,7 @@ public class DayCycle extends JComponent implements Runnable
     public DayCycle()
     {
         x = 10;
-        y = 50;
+        y = 100;
         w = 75;
         h = 75;
         startAngle = 0; 
@@ -76,16 +76,19 @@ public class DayCycle extends JComponent implements Runnable
     public void run()
     {
         while(true){         
-            if (x==500){
+            if (x > 500){
                 x = 10;
-                y = 50;
+                y = 100;
             }
             x+=5;
-            if (x >= 50)
+            if (x < 300)
             {
-                y += 10;
+                y -= 1;
             }
-            y -= 5;
+            else
+            {
+                y += 1;
+            }
             System.out.println("poo"); 
             
             try{
