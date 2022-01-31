@@ -28,7 +28,7 @@ public class BridgeColor extends JComponent implements Runnable
             w = 200;
             h = 270;
             startAngle = 0;
-            arcAngle = 180;
+            arcAngle = 360;
         }
         else if (num == 2)
         {

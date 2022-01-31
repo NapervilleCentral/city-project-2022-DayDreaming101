@@ -10,21 +10,22 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BridgeFloor extends JComponent implements Runnable
+public class DayCycle extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
-    private int x,y,w,h;
-    Color sqColor = new Color(160, 160, 160);
+    private int x,y,w,h,startAngle,arcAngle;
     
     /**
      * Constructor for objects of class Floor
      */
-    public BridgeFloor()
+    public DayCycle()
     {
-        x = 0;
-        y = 300;
-        w = 600;
-        h = 12;
+        x = 10;
+        y = 50;
+        w = 75;
+        h = 75;
+        startAngle = 0; 
+        arcAngle = 360; 
     }
 
     @Override
@@ -67,37 +68,24 @@ public class BridgeFloor extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
-          page.setColor(sqColor);
-          page.fillRect(x, y, w, h);
-          /*
-          page.setColor(sqColor);
-          page.drawRect(x+10,y+2,10,10);
+          page.setColor(Color.yellow);
+          //page.fillArc(x,y,w,h,startAngle,arcAngle);
           
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+18, 10, 10);
-         
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+34, 10, 10);*/
+          
+          
+          for (;y < 10;y -= 1, x+= 1)
+          {
+            page.fillArc(x,y,w,h,startAngle,arcAngle);
+            }
        }
        
     public void run()
-    {/*
-        int running  = 0;
-    while(true){
-        
-        if(running % 2 == 0)
-            x +=20;
-        else
-            x -= 20;
-        running ++;
+    {
+        while(true){           
             try{
-            Thread.sleep(100);
-        }catch (Exception e){}
-        
-        System.out.print(x+"-----------------");
-        //repaint();
+                Thread.sleep(100);
+            }catch (Exception e){}
+            repaint();
+        }
     }
-    
-  
-    */}
 }

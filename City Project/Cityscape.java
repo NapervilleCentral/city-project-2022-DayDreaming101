@@ -20,6 +20,8 @@ public class Cityscape extends JComponent
     private TopSky topsky;
     private BridgeColor bridgecolor1, bridgecolor2,bridgecolor3; 
     private Building building1,building2,building3,building4,building5,building6,building7;
+    private River river;
+    private DayCycle cycle;
     private int running = 0;
     
     
@@ -28,6 +30,8 @@ public class Cityscape extends JComponent
     public Cityscape()
     {
         topsky = new TopSky();
+        
+        cycle = new DayCycle();
         
         building1 = new Building(1); 
         building2 = new Building(2);
@@ -51,13 +55,24 @@ public class Cityscape extends JComponent
         rail2 = new BridgeRailings(2);
         rail3 = new BridgeRailings(3); 
         
-        Thread t1 = new Thread(ground);
-        Thread t2 = new Thread(overhead1);
-        Thread t3 = new Thread(overhead2);
-        Thread t4 = new Thread(overhead3);
-        Thread t5 = new Thread(rail1);
-        //t1.start();
-
+        river = new River();
+        
+        Thread t1 = new Thread(building1);
+        Thread t2 = new Thread(building2);
+        Thread t3 = new Thread(building3);
+        Thread t4 = new Thread(building4);
+        Thread t5 = new Thread(building5);
+        Thread t6 = new Thread(building6);
+        Thread t7 = new Thread(cycle);
+        t7.start();
+        t1.start();
+        t2.start(); 
+        t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+         
+        
     }
     
     
@@ -74,6 +89,8 @@ public class Cityscape extends JComponent
         Graphics2D g2 = (Graphics2D) g;
         
         topsky.draw(g2);
+        
+        cycle.draw(g2); 
         
         building1.draw(g2); 
         building2.draw(g2);
@@ -95,6 +112,8 @@ public class Cityscape extends JComponent
         rail1.draw(g2); 
         rail2.draw(g2);
         rail3.draw(g2); 
+        
+        river.draw(g2);
         
         
         // invoke the draw method on each object in your Cityscape

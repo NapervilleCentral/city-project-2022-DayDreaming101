@@ -14,7 +14,8 @@ public class Building extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h;
-    Color sqColor = new Color(190,190,190);
+    Color sqColor = new Color(160, 160, 160);
+    Color colornum = new Color (168,220,217);
     
     /**
      * Constructor for objects of class Floor
@@ -25,71 +26,43 @@ public class Building extends JComponent implements Runnable
         {
             x = 30;
             y = 70;
-            w = 57;
+            w = 56;
             h = 150; 
         }
         else if (num == 2)
         {
             x = 105;
             y = 40;
-            w = 65;
-            h = 200;/*
-            a1 = 100;
-            b1 = 165;
-            a2 = 100;
-            b2 = 300;*/
+            w = 56;
+            h = 200;
         }
         else if (num == 3)
         {
-           x = 190;
+           x = 170;
            y = 140;
-           w = 35;
+           w = 56;
            h = 170;
-            
-           /*
-            * c1 = 150;
-            d1 = 185;
-            c2 = 150;
-            d2 = 300; 
-            */
         }
         else if (num == 4)
         {
             x = 240;
             y = 30;
-            w = 65;
+            w = 56;
             h = 200;
-            
-            /* x1 = 433;
-            y1 = 185;
-            x2 = 433;
-            y2 = 300;*/
         }
         else if (num == 5)
         {
             x = 320;
             y = 90;
-            w = 55;
+            w = 56;
             h = 200; 
-            
-        /*
-         * a1 = 290;
-            b1 = 112;
-            a2 = 290;
-            b2 = 300;
-         */
         }
         else if (num == 6)
         {
             x = 420;
             y = 60;
-            w = 55;
+            w = 56;
             h = 150;
-            
-            /*x1 = 433;
-            y1 = 185;
-            x2 = 433;
-            y2 = 300;*/
         }
     }
 
@@ -137,36 +110,34 @@ public class Building extends JComponent implements Runnable
           page.fillRect(x,y,w,h);
           page.setColor(Color.black);
           page.drawRect(x,y,w,h);
-      
-          /*
-          page.setColor(sqColor);
-          page.drawRect(x+10,y+2,10,10);
+                    
+          Random gen = new Random();
+          for (int z = y + 8, a = 0; a!=9 ; z += 16, a++)
+          {
+              page.setColor(new Color(gen.nextInt(256),gen.nextInt(256),gen.nextInt(256)));
+              page.fillRect(x+8,z,8,8);
+          }
           
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+18, 10, 10);
-         
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+34, 10, 10);*/
+          for (int z = y + 8, a = 0; a!=9 ; z += 16, a++)
+          {
+              page.setColor(new Color(gen.nextInt(256),gen.nextInt(256),gen.nextInt(256)));
+              page.fillRect(x+24,z,8,8);
+          }
+          
+          for (int z = y + 8, a = 0; a!=9 ; z += 16, a++)
+          {
+              page.setColor(new Color(gen.nextInt(256),gen.nextInt(256),gen.nextInt(256)));
+              page.fillRect(x+40,z,8,8);
+          }
        }
        
     public void run()
-    {/*
-        int running  = 0;
-    while(true){
-        
-        if(running % 2 == 0)
-            x +=20;
-        else
-            x -= 20;
-        running ++;
+    {
+        while(true){           
             try{
-            Thread.sleep(100);
-        }catch (Exception e){}
-        
-        System.out.print(x+"-----------------");
-        //repaint();
-    }*/
-    
-  
+                Thread.sleep(5);
+            }catch (Exception e){}
+            repaint();
+        }
     }
 }

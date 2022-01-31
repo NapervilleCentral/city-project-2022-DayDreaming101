@@ -14,17 +14,17 @@ public class River extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h;
-    Color sqColor = new Color(0,0,1390);
+    Color sqColor = new Color(0,64,255);
     
     /**
      * Constructor for objects of class Floor
      */
-    public River(int num)
+    public River()
     {
         x = 0;
-        y = 300;
+        y = 312;
         w = 600;
-        h = 12;
+        h = 150;
     }
 
     @Override
@@ -69,8 +69,6 @@ public class River extends JComponent implements Runnable
        {
           page.setColor(sqColor);
           page.fillRect(x,y,w,h);
-          page.setColor(Color.black);
-          page.drawRect(x,y,w,h);
       
           /*
           page.setColor(sqColor);
