@@ -5,10 +5,11 @@ import java.awt.*;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 /**
- * Write a description of class Floor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Theodore Ng
+ * Mr Hayes 7th Period
+ * 1/31/2022
+ * BridgeFloor class
+ * Makes the floor the bridge overhead stands on 
  */
 public class BridgeFloor extends JComponent implements Runnable
 {
@@ -17,8 +18,10 @@ public class BridgeFloor extends JComponent implements Runnable
     Color sqColor = new Color(160, 160, 160);
     
     /**
-     * Constructor for objects of class Floor
-     */
+    *Constructor(): sets the dimensions of the grey base of the bridge
+    *@param building number
+    *@return 
+    */
     public BridgeFloor()
     {
         x = 0;
@@ -27,6 +30,13 @@ public class BridgeFloor extends JComponent implements Runnable
         h = 12;
     }
 
+    /**
+     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
+     * It does not need to be invoked explicitly.
+     *
+     * @param g a reference to the Graphics object used for all drawing operations
+     *
+     */
     @Override
     public void paintComponent(Graphics g)
     {
@@ -62,23 +72,16 @@ public class BridgeFloor extends JComponent implements Runnable
         repaint();
     }
     
-       //-----------------------------------------------------------------
-       //  Draws this figure relative to baseX, baseY, and height.
-       //-----------------------------------------------------------------
+        /**
+        * draw(): Draws the rectangular base of the bridge
+        * @param the virtual drawing on palette
+        * @return 
+        */
        public void draw (Graphics2D page)//page is the virtual drawing on palette
-       {
+        {
           page.setColor(sqColor);
           page.fillRect(x, y, w, h);
-          /*
-          page.setColor(sqColor);
-          page.drawRect(x+10,y+2,10,10);
-          
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+18, 10, 10);
-         
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+34, 10, 10);*/
-       }
+        }
        
     public void run()
     {/*
@@ -96,8 +99,6 @@ public class BridgeFloor extends JComponent implements Runnable
         
         System.out.print(x+"-----------------");
         //repaint();
-    }
-    
-  
+    }  
     */}
 }

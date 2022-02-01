@@ -2,21 +2,21 @@ import javax.swing.JFrame;
 import java.awt.*;
 
 /**
- * Class that contains the main method for the program and creates the frame containing the component.
- * 
- * @author gcschmit
- * @version 18 July 2014
+ * Theodore Ng
+ * Mr Hayes 7th Period
+ * 1/31/2022
+ * CityscapeViewer main
+ * Class that contains the main method for the program 
+ * and creates the frame containing the component. 
  */
 public class CityscapeViewer
 {
-    // the cityscape will be animated for 60 seconds
+    // the cityscape animation time is controled here
     static final int ANIMATION_TIME_IN_SECONDS = 1800;
    
     /**
      * main method for the program which creates and configures the frame for the program
-     * 
      * @param args  not used
-     *
      */
     public static void main(String[] args) throws InterruptedException
     {

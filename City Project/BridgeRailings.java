@@ -5,19 +5,21 @@ import java.awt.*;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 /**
- * Write a description of class Floor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Theodore Ng
+ * Mr Hayes 7th Period
+ * 1/31/2022
+ * BridgeRailings class
+ * Draws the railings from the arc to the floor of the bridge
  */
 public class BridgeRailings extends JComponent implements Runnable
 {
-    // instance variables - replace the example below with your own
     private int x1,y1,x2,y2,a1,b1,a2,b2,c1,d1,c2,d2;
     
     /**
-     * Constructor for objects of class Floor
-     */
+    *Constructor(): takes the bridge number and sets the length of each rail
+    *@param building number
+    *@return 
+    */
     public BridgeRailings(int num)
     {
         if (num == 1)
@@ -74,6 +76,13 @@ public class BridgeRailings extends JComponent implements Runnable
 
     }
 
+    /**
+     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
+     * It does not need to be invoked explicitly.
+     *
+     * @param g a reference to the Graphics object used for all drawing operations
+     *
+     */
     @Override
     public void paintComponent(Graphics g)
     {
@@ -109,25 +118,17 @@ public class BridgeRailings extends JComponent implements Runnable
         repaint();
     }
     
-       //-----------------------------------------------------------------
-       //  Draws this figure relative to baseX, baseY, and height.
-       //-----------------------------------------------------------------
+        /**
+        * draw(): Draws the railings using the different line dimension
+        * @param the virtual drawing on palette
+        * @return 
+        */
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
           page.setColor(Color.black);
           page.drawLine(x1,y1,x2,y2);
           page.drawLine(a1,b1,a2,b2);
           page.drawLine(c1,d1,c2,d2);
-          
-          /*
-          page.setColor(sqColor);
-          page.drawRect(x+10,y+2,10,10);
-          
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+18, 10, 10);
-         
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+34, 10, 10);*/
        }
        
     public void run()

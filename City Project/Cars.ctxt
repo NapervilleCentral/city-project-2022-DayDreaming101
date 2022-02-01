@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=BridgeFloor
-comment0.text=\r\n\ Theodore\ Ng\r\n\ Mr\ Hayes\ 7th\ Period\r\n\ 1/31/2022\r\n\ BridgeFloor\ class\r\n\ Makes\ the\ floor\ the\ bridge\ overhead\ stands\ on\ \r\n
+comment0.target=Cars
+comment0.text=\r\n\ Theodore\ Ng\r\n\ Mr\ Hayes\ 7th\ Period\r\n\ 1/31/2022\r\n\ Cars\ class\r\n\ Makes\ the\ cars\ and\ allows\ the\ cars\ to\ reset\ to\ the\ left\r\n
 comment1.params=
-comment1.target=BridgeFloor()
-comment1.text=\r\nConstructor()\:\ sets\ the\ dimensions\ of\ the\ grey\ base\ of\ the\ bridge\r\n@param\ building\ number\r\n@return\ \r\n
+comment1.target=Cars()
+comment1.text=\r\nConstructor()\:\ sets\ the\ dimensions\ of\ the\ car's\ base\r\n@param\ \r\n@return\ \r\n
 comment2.params=g
 comment2.target=void\ paintComponent(java.awt.Graphics)
 comment2.text=\r\n\ This\ method\ is\ invoked\ by\ the\ Java\ Run-Time\ whenever\ the\ component\ needs\ to\ be\ redrawn.\r\n\ It\ does\ not\ need\ to\ be\ invoked\ explicitly.\r\n\r\n\ @param\ g\ a\ reference\ to\ the\ Graphics\ object\ used\ for\ all\ drawing\ operations\r\n\r\n
@@ -12,7 +12,8 @@ comment3.target=void\ setX(int)
 comment3.text=\r\n\ Animate\ the\ cityscape\ by\ updating\ the\ objects\ such\ that\ they\ appear\ to\ be\ animated\ when\r\n\ \ \ \ \ \ they\ are\ next\ drawn.\r\n\r\n
 comment4.params=page
 comment4.target=void\ draw(java.awt.Graphics2D)
-comment4.text=\r\n\ draw()\:\ Draws\ the\ rectangular\ base\ of\ the\ bridge\r\n\ @param\ the\ virtual\ drawing\ on\ palette\r\n\ @return\ \r\n
+comment4.text=\r\n\ draw()\:\ Draws\ the\ rectangular\ car\ bases\ and\ based\ on\ those\ values,\ the\ method\r\n\ creates\ the\ windows\r\n\ @param\ the\ virtual\ drawing\ on\ palette\r\n\ @return\ \r\n
 comment5.params=
 comment5.target=void\ run()
+comment5.text=\r\n\ run()\:\ takes\ no\ param,\ makes\ a\ thread\ that\ resets\ the\ car\ position\ when\ it\ goes\r\n\ too\ far\ off\ screen\r\n\ @param\r\n\ @return\r\n
 numComments=6

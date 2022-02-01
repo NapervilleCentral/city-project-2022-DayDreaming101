@@ -1,25 +1,26 @@
 import java.awt.*;
-    import java.util.*;
-    
-    import java.awt.Graphics;
-    import java.awt.Graphics2D;
-    import javax.swing.JComponent;
+import java.util.*;    
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
 /**
- * Write a description of class Floor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Theodore Ng
+ * Mr Hayes 7th Period
+ * 1/31/2022
+ * Building class
+ * Makes the buildings and allows the windows to flash random colors
  */
 public class Building extends JComponent implements Runnable
 {
-    // instance variables - replace the example below with your own
     private int x,y,w,h;
     Color sqColor = new Color(160, 160, 160);
-    Color colornum = new Color (168,220,217);
+    Color colornum = new Color (168,220,217);//custom colors
     
     /**
-     * Constructor for objects of class Floor
-     */
+    *Constructor(): takes the building number as a param and sets the dimensions
+    *@param building number
+    *@return 
+    */
     public Building(int num)
     {
         if (num == 1)
@@ -66,16 +67,20 @@ public class Building extends JComponent implements Runnable
         }
     }
 
+    /**
+     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
+     * It does not need to be invoked explicitly.
+     *
+     * @param g a reference to the Graphics object used for all drawing operations
+     *
+     */
     @Override
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
-        
         // invoke the draw method 
         // ...
         draw(g2);
-        
-        
     }
     
     /**
@@ -101,21 +106,26 @@ public class Building extends JComponent implements Runnable
         repaint();
     }
     
-       //-----------------------------------------------------------------
-       //  Draws this figure relative to baseX, baseY, and height.
-       //-----------------------------------------------------------------
-       public void draw (Graphics2D page)//page is the virtual drawing on palette
+       /**
+        * draw(): Draws the rectangular buildings and the random
+        * color windows
+        * @param the virtual drawing on palette
+        * @return 
+        */
+       public void draw (Graphics2D page)
        {
-          page.setColor(sqColor);
+          page.setColor(sqColor);//Draws the large buildings
           page.fillRect(x,y,w,h);
           page.setColor(Color.black);
           page.drawRect(x,y,w,h);
                     
-          Random gen = new Random();
+          Random gen = new Random();//each for loop randomizes the color of each row of
+          //windows
           for (int z = y + 8, a = 0; a!=9 ; z += 16, a++)
           {
               page.setColor(new Color(gen.nextInt(256),gen.nextInt(256),gen.nextInt(256)));
-              page.fillRect(x+8,z,8,8);
+              //randomizes RGB values
+              page.fillRect(x+8,z,8,8);//the RGB values are then set to the window rectangles
           }
           
           for (int z = y + 8, a = 0; a!=9 ; z += 16, a++)
@@ -130,7 +140,13 @@ public class Building extends JComponent implements Runnable
               page.fillRect(x+40,z,8,8);
           }
        }
-       
+    
+       /**
+        * run(): takes no param, makes a thread that keeps "refreshing"
+        * the window color
+        * @param
+        * @return
+        */
     public void run()
     {
         while(true){           

@@ -5,10 +5,11 @@ import java.awt.*;
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 /**
- * Write a description of class Floor here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Theodore Ng
+ * Mr Hayes 7th Period
+ * 1/31/2022
+ * BridgeOverhead class
+ * Overlays a white bridge over the sky backgrouynd and makes the actual arcs
  */
 public class BridgeOverhead extends JComponent implements Runnable
 {
@@ -16,8 +17,10 @@ public class BridgeOverhead extends JComponent implements Runnable
     private int x,y,w,h,startAngle,arcAngle;
     
     /**
-     * Constructor for objects of class Floor
-     */
+    *Constructor(): takes the bridge number and sets the dimensions of the arc
+    *@param bridge no.
+    *@return 
+    */
     public BridgeOverhead(int num)
     {
         if (num == 1)
@@ -50,6 +53,13 @@ public class BridgeOverhead extends JComponent implements Runnable
 
     }
 
+    /**
+     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
+     * It does not need to be invoked explicitly.
+     *
+     * @param g a reference to the Graphics object used for all drawing operations
+     *
+     */
     @Override
     public void paintComponent(Graphics g)
     {
@@ -85,27 +95,22 @@ public class BridgeOverhead extends JComponent implements Runnable
         repaint();
     }
     
-       //-----------------------------------------------------------------
-       //  Draws this figure relative to baseX, baseY, and height.
-       //-----------------------------------------------------------------
+       /**
+        * draw(): Draws the bridge arc and fills it
+        * @param the virtual drawing on palette
+        * @return 
+        */       
        public void draw (Graphics2D page)//page is the virtual drawing on palette
        {
-          page.setColor(Color.black);
+          page.setColor(Color.white);//fill the inside arc
+          page.fillArc(x,y,w,h,startAngle,arcAngle); 
+           
+          page.setColor(Color.black);//outline arc to make it more defined
           page.drawArc(x, y,w,h,startAngle,arcAngle);
-          
-          /*
-          page.setColor(sqColor);
-          page.drawRect(x+10,y+2,10,10);
-          
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+18, 10, 10);
-         
-          page.setColor(sqColor);
-          page.fillRect(x+10, y+34, 10, 10);*/
        }
        
     public void run()
-    {
+    {/*
         int running  = 0;
     while(true){
         
@@ -122,6 +127,6 @@ public class BridgeOverhead extends JComponent implements Runnable
         //repaint();
     }
     
-  
+  */
     }
 }
